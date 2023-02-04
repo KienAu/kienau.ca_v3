@@ -1,0 +1,286 @@
+.header {
+    // layout
+    top: rem-calc(25);
+    left: rem-calc(30);
+    width: calc(100% - rem-calc(60));
+    z-index: 99;
+    position: fixed;
+
+    @include respond-below(smallMobile) {
+        // layout
+        top: rem-calc(15);
+        left: rem-calc(15);
+        width: calc(100% - rem-calc(30));
+    }
+
+    &__border-top {
+        // layout
+        height: rem-calc(1);
+        z-index: 999;
+        display: block;
+        position: relative;
+        margin-bottom: rem-calc(20);
+
+        // design
+        background-color: $color-dark;
+    }
+
+    &__wrapper {
+        // layout
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        // layout
+        width: rem-calc(30);
+        height: rem-calc(30);
+        z-index: 1;
+        position: relative;
+
+        &__image {
+            // layout
+            left: 0;
+            width: rem-calc(30);
+            height: rem-calc(30);
+            position: absolute;
+
+            &--is-light {
+                // layout
+                display: none;
+            }
+        }
+    }
+
+    &__hamburger {
+        // layout
+        display: none;
+
+        // event 
+        cursor: pointer;
+
+        @include respond-below(tablet) {
+            // layout
+            display: flex;
+            align-items: center;
+        }
+
+        &__text {
+            // layout
+            width: rem-calc(55);
+            display: flex;
+            overflow: hidden;
+            align-items: flex-start;
+
+            // typo
+            letter-spacing: rem-calc(1.5);
+
+            &::before {
+                // layout
+                display: block;
+                content: 'MENU';
+                
+                // animation
+                transition: transform ease .5s;
+            }
+
+            &::after {
+                // layout
+                display: block;
+                content: 'CLOSE';
+
+                // animation
+                transform: translateX(200%);
+                transition: transform ease .75s;
+            }
+        }
+
+        &__icon {
+            // layout
+            width: rem-calc(30);
+            height: rem-calc(30);
+            display: flex;
+            position: relative;
+            margin-left: rem-calc(10);
+
+            &__default,
+            &__close {
+                // layout
+                top: 50%;
+                left: 50%;
+                position: absolute;
+
+                // animation
+                transform: translate(-50%, -50%);
+            }
+
+            &__default {
+                // layout
+                display: flex;
+                align-items: flex-end;
+                flex-direction: column;
+
+                span {
+                    // layout
+                    height: rem-calc(1);
+                    display: block;
+                    overflow: hidden;
+                    position: relative;
+
+                    &:first-child {
+                        // layout
+                        width: rem-calc(30);
+                        margin-bottom: rem-calc(10);
+                    }
+
+                    &:last-child {
+                        // layout
+                        width: rem-calc(15);
+
+                        &::after,
+                        &::before {
+                            // animation
+                            transition-delay: 150ms;
+                        }
+                    }
+
+                    &::after,
+                    &::before {
+                        // layout
+                        width: 100%;
+                        height: 100%;
+                        content: '';
+                        position: absolute;
+
+                        // design
+                        background-color: $color-dark;
+
+                        // animation
+                        transition: transform ease 300ms;
+                    }
+                }
+            }
+
+            &__close {
+                span {
+                    // layout
+                    width: rem-calc(30);
+                    height: rem-calc(1);
+                    display: block;
+
+                    // animation
+                    transform: translateY(50%) rotate(45deg) scaleX(0);
+                    transition: transform ease 200ms;
+
+                    // design
+                    background-color: $color-dark;
+
+                    &:last-child {
+                        // animation
+                        transform: translateY(-50%) rotate(-45deg) scale(0);
+
+                    }
+                }
+            }
+        }
+
+        &--is-open {
+            .header__hamburger {
+                &__text {
+                    &:before {
+                        // animation
+                        transform: translateX(200%);
+                    }
+
+                   &::after {
+                    // animation
+                    transform: translateX(-90%);
+                    transition: transform ease .75s;
+                    transition-delay: 350ms;
+                   }    
+                }
+
+                &__icon {
+                    &__default {
+                        span {
+                            &::before {
+                                // animation
+                                transform: translateX(100%);
+                            }
+        
+                            &::after {
+                                // animation
+                                transform: translateX(200%);
+                            }
+                        }
+                    }
+
+                    &__close {
+                        span {
+                            // animation
+                            transform: translateY(50%) rotate(45deg) scaleX(1);
+                            transition-delay: 450ms;
+
+                            &:last-child {
+                                // animation
+                                transform: translateY(-50%) rotate(-45deg) scaleX(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.body--on-dark-mode {
+    .header{
+        // design
+        border-top: rem-calc(1) solid $color-light;
+
+        &__border-top {
+            // design
+            background-color: $color-light;
+        }
+
+        &__logo {
+            &__image {
+                &--is-light {
+                    // layout
+                    display: block;
+                }
+
+                &--is-dark {
+                    // layout
+                    display: none;
+                }
+            }
+        }
+
+        &__hamburger {
+            &__text {
+                // typo
+                color: $color-light;
+            }
+
+            &__icon {
+                &__default {
+                    span {
+                        &::after,
+                        &::before {
+                            // design
+                            background-color: $color-light;
+                        }
+                    }
+                }
+
+                &__close {
+                    span {
+                        // design
+                        background-color: $color-light;
+                    }
+                }
+            }
+        }
+    }
+}

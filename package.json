@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "dev:https": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "nuxt": "npm:nuxt3@latest"
+  },
+  "dependencies": {
+    "@storyblok/nuxt": "^5.0.0",
+    "axios": "^1.2.2",
+    "gsap": "^3.11.4",
+    "prettier": "^2.8.2",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0"
+  }
+}

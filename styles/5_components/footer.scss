@@ -1,0 +1,47 @@
+.footer {
+    // layout
+    right: rem-calc(25);
+    bottom: rem-calc(30);
+    z-index: 99;
+    position: fixed;
+
+    @include respond-below(smallMobile) {
+        // layout
+        right: rem-calc(15);
+        bottom: rem-calc(15);
+    }
+
+    &__text {
+        // layout
+        position: relative;
+
+        // typo
+        color: $color-dark;
+        font-size: rem-calc(12);
+        font-family: $font-primary;
+        letter-spacing: rem-calc(1.5);
+        text-transform: uppercase;
+    }
+
+    &__transition-text {
+        // layout
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        // design
+        background-color: $color-highlight;
+    }
+
+    
+}
+
+.body--on-dark-mode {
+    .footer {
+        &__text {
+            // typo
+            color: $color-light;
+        }
+    }
+}

@@ -1,0 +1,80 @@
+.home {
+    // layout
+    height: calc(100vh - rem-calc(60));
+
+    &__wrapper {
+        // layout
+        height: 100%;
+        align-items: center;
+
+        @include respond-below(tablet) {
+            // layout
+            flex-direction: column-reverse;
+            justify-content: center;
+        }
+    }
+
+    &__subtitle {
+        // layout
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        // typo
+        font-size: rem-calc(24);
+
+        span {
+            // layout
+            margin: rem-calc(0 15);
+
+            // design
+            background-color: $color-light;
+
+            @include respond-below(smallMobile) {
+                // layout
+                margin: 0;
+            }
+        }
+
+        &:before {
+            // layout
+            flex: 1 ;
+            height: rem-calc(1);
+            content: ' ';
+
+            // design
+            background-color: $color-dark;
+        }
+
+        @include respond-below(smallMobile) {
+            // typo
+            font-size: rem-calc(16);
+        }
+    }
+
+    &__image {
+        // layout
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+.body--on-dark-mode {
+    .home {
+        &__subtitle {
+            &:before {   
+                // design
+                background-color: $color-light;
+            }
+
+            span {
+                // layout
+                margin: rem-calc(0 15);
+    
+                // design
+                background-color: $color-dark;
+            }
+        }
+    }
+}

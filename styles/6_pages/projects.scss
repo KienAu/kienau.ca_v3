@@ -1,0 +1,171 @@
+.projects {
+    // layout
+    height: calc(100vh - rem-calc(60));
+    padding: rem-calc(100 0 0);
+
+    @include respond-below(bigMobile) {
+        // layout
+        height: unset;
+        padding: rem-calc(100 0);
+    }
+
+    &__wrapper {
+        // layout
+        height: 100%;
+
+        @include respond-below(bigMobile) {
+            // layout
+            flex-direction: column;
+        }
+    }
+
+    &__title {
+        @include respond-below(tablet) {
+            // typo
+            white-space: nowrap;
+        }
+    }
+
+    &__content,
+    &__secondary-image,
+    &__image {
+        // layout
+        display: none;
+
+        &--is-active {
+            // layout
+            display: block;
+        }
+    }
+
+    &__highlight-text {
+        // layout
+        display: block;
+        margin-top: rem-calc(20);
+
+        // typo
+        color: $color-highlight;
+        font-weight: 500;
+        letter-spacing: rem-calc(1.5);
+    }
+
+    &__description {
+        // layout
+        display: block;
+        margin-top: rem-calc(20);
+
+        // typo
+        font-weight: 500;
+    }
+
+    &__link {
+        // layout
+        display: block;
+        margin-top: rem-calc(80);
+
+        // typo
+        color: $color-light;
+        text-transform: uppercase;
+        letter-spacing: rem-calc(1.5);
+        text-decoration: none;
+
+        &::before {
+            // layout
+            width: rem-calc(100);
+            height: rem-calc(1);
+            display: inline-block;
+            content: ' ';
+            margin-right: rem-calc(2);
+            margin-bottom: rem-calc(4);
+
+            // design
+            background-color: $color-light;
+        }
+    }
+
+    &__control-panel {
+        // layout
+        width: 83%;
+        display: flex;
+        margin-top: rem-calc(32);
+        justify-content: space-between;
+
+        @include respond-below(bigMobile) {
+            // layout
+            width: 100%;
+        }
+    }
+
+    &__secondary-image {
+        // layout
+        width: 83%;
+        margin-top: rem-calc(32);
+        object-fit: cover;
+
+        @include respond-below(bigMobile) {
+            // layout
+            width: 100%;
+        }
+    }
+
+    &__image-wrap {
+        // layout
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+
+        @include respond-below(tablet) {
+            // layout
+            margin-top: rem-calc(160);
+        }
+
+        @include respond-below(bigMobile) {
+            // layout
+            margin-top: rem-calc(0);
+        }
+    }
+
+    &__image {
+        // layout
+        left: 50%;
+        height: calc(100% - rem-calc(60));
+        position: absolute;
+        object-fit: cover;
+        object-position: center;
+
+        // animation
+        transform: translateX(-50%);
+
+        @include respond-below(tablet) {
+            // layout
+            max-height: rem-calc(850);
+        }
+
+        @include respond-below(bigMobile) {
+            // layout
+            width: 100%;
+            position: static;
+
+            // animation
+            transform: unset;
+        }
+    }
+
+    &__controller {
+        // layout
+        padding: 0;
+
+        // typo
+        color: $color-light;
+        text-transform: uppercase;
+        letter-spacing: rem-calc(1.5);
+
+        // design
+        border: none;
+        outline: 0;
+        background-color: transparent;
+
+        // event
+        cursor: pointer;
+    }
+}

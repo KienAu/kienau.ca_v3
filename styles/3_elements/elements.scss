@@ -1,0 +1,130 @@
+body {
+    // layout
+    margin: rem-calc(25 30);
+    overflow-x: hidden;
+
+    // typo
+    color: $color-dark; 
+    font-family: $font-primary;
+
+    // design
+    background-color: $color-light;
+
+    // animation
+    transition: all 1s ease;
+
+    @include respond-below(smallMobile) {
+        // layout
+        margin: rem-calc(15);
+    }
+}
+
+ul {
+    // layout
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    // design
+    list-style-type: none;
+}
+
+h1 {
+    // layout
+    margin: 0;
+
+    // typo
+    font-size: rem-calc(128);
+    font-weight: 400;
+    font-family: $font-display;
+
+    @include respond-below(smallMobile) {
+        // typo
+        font-size: rem-calc(64);
+    }
+}
+
+h2 {
+    // layout
+    margin: 0;
+
+    // typo
+    font-size: rem-calc(64);
+    font-weight: 400;
+    font-family: $font-display;
+}
+
+h3 {
+    // layout
+    margin: 0;
+
+    // typo
+    font-weight: 400;
+    font-family: $font-primary;
+    letter-spacing: rem-calc(1.5);
+}
+
+/* width */
+::-webkit-scrollbar {
+    //layout
+    width: rem-calc(10);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    //design
+    background: $color-light; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    //design
+    background: $color-dark; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    //design
+    background: $color-highlight; 
+}
+
+::selection {
+    //design
+    background-color: $color-highlight; 
+}
+
+.body--on-dark-mode {
+    // typo
+    color: $color-light; 
+
+    // design
+    background-color: $color-dark;
+
+    // animation
+    transition: all 1s ease;
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        //design
+        background: $color-dark; 
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        //design
+        background: $color-light; 
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        //design
+        background: $color-highlight; 
+    }
+
+    ::selection {
+        //design
+        background-color: $color-highlight; 
+    }
+
+}

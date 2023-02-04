@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500&family=Playfair+Display&display=swap');
+
+// Colors
+$color-light: #F4EFE4;
+$color-dark: #333333;
+$color-highlight: #FE8079;
+
+// Fonts
+$font-display:  'Playfair Display', serif;
+$font-primary: 'Karla', sans-serif;
+
+// Breakpoint
+$breakpoints:  (
+  "smallMobile": 600px,
+  "bigMobile": 768px,
+  "tablet": 1024px,
+  "laptop": 1440px,
+  "desktop": 1920px,
+  "4k": 2560px,
+)
