@@ -39,4 +39,6 @@ Locally preview production build:
 npm run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+node version v18.13.0
+
+npm version 8.19.3
