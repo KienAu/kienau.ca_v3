@@ -11,7 +11,7 @@
 </script>
 
 <template>
-    <section class="about">
+    <section class="about" id="About">
         <div class="container row about__container">
             <div class="column--is-w6 column--is-md-w10 column--is-sm-w12">
                 <section class="about__sections" v-for="section in blok.sections">

@@ -52,12 +52,14 @@
         }
     }
 
+    &__link {
+        // event
+        cursor: none;
+    }
+
     &__hamburger {
         // layout
         display: none;
-
-        // event 
-        cursor: pointer;
 
         @include respond-below(tablet) {
             // layout

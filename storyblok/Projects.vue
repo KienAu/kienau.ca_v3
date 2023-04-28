@@ -26,12 +26,11 @@
             currentActiveSlide.value += val
         }
     }
-    
 
 </script>
 
 <template>
-    <section class="projects">
+    <section class="projects" id="Projects">
         <div class="container row projects__wrapper">
             <div class="column--is-w6 column--is-sm-w12">
                 <h1 class="projects__title">

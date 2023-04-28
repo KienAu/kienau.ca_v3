@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <section class="contact">
+    <section class="contact" id="contact">
         <div class="container row contact__wrapper">
             <div class="column--is-w4 column--is-md-w12">
                 <span class="contact__highlight-text">{{ blok.media_title }}</span>

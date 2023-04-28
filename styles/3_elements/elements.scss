@@ -13,6 +13,9 @@ body {
     // animation
     transition: all 1s ease;
 
+    // event 
+    cursor: none;
+
     @include respond-below(smallMobile) {
         // layout
         margin: rem-calc(15);
@@ -69,29 +72,44 @@ h3 {
 ::-webkit-scrollbar {
     //layout
     width: rem-calc(10);
+
+    // event
+    cursor: none;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
     //design
     background: $color-light; 
+
+    // event
+    cursor: none;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     //design
     background: $color-dark; 
+
+    // event
+    cursor: none;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     //design
     background: $color-highlight; 
+
+    // event
+    cursor: none;
 }
 
 ::selection {
     //design
     background-color: $color-highlight; 
+
+    // event
+    cursor: none;
 }
 
 .body--on-dark-mode {
@@ -105,24 +123,24 @@ h3 {
     transition: all 1s ease;
 
     /* Track */
-    ::-webkit-scrollbar-track {
+    &::-webkit-scrollbar-track {
         //design
         background: $color-dark; 
     }
 
     /* Handle */
-    ::-webkit-scrollbar-thumb {
+    &::-webkit-scrollbar-thumb {
         //design
         background: $color-light; 
     }
 
     /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
+    &::-webkit-scrollbar-thumb:hover {
         //design
         background: $color-highlight; 
     }
 
-    ::selection {
+    &::selection {
         //design
         background-color: $color-highlight; 
     }

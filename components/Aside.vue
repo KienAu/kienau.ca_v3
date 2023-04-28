@@ -21,15 +21,22 @@
             delay: 2,
             duration: .5
         })
-    })
 
+        gsap.to('.aside__text', {
+            x: 0,
+            delay: 2.5,
+            duration: .5,
+            ease: 'circ'
+        })
+
+    })
 </script>
 
 <template>
     <aside class="aside">
-        <span class="aside__text">
-            {{ socialTitle }}
-        </span>
+        <div class="aside__text-wrap">
+            <span class="aside__text">{{ socialTitle }}</span>
+        </div>
         <span class="aside__line">
         </span>
         <ul class="aside__social-media aside__social-media--is-dark">

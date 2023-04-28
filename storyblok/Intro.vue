@@ -6,7 +6,7 @@
 </script>
 
 <template>
-    <section class="home">
+    <section class="home" id="Home">
         <div class="container row home__wrapper">
             <div class="column--is-w7 column--is-md-w12">
                 <h1 class="home__title">

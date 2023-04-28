@@ -5,6 +5,7 @@ export default defineNuxtConfig({
         apiOptions: { "region": "us" }
     }]],
     app: {
+        pageTransition: { name: 'page', mode: 'out-in' },
         head: {
             charset: 'utf-16',
             viewport: 'initial-scale=1', 

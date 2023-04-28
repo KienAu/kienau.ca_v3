@@ -45,6 +45,11 @@
 
             // design
             background-color: $color-dark;
+
+            @include respond-below(smallMobile) {
+                // layout
+                margin-right: rem-calc(16);
+            }
         }
 
         @include respond-below(smallMobile) {

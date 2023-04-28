@@ -1,7 +1,6 @@
 .navigation {
     @include respond-below(tablet) {
         // layout
-        top: rem-calc(-1000);
         left: rem-calc(-30);
         width: calc(100% + rem-calc(60));
         height: 100vh;
@@ -9,20 +8,21 @@
 
         // design
         opacity: 0;
-        background-color: $color-light;
+        visibility: hidden;
 
         // animation
         transition: all 1s ease;
 
         &--is-open {
             // layout
-            top: rem-calc(-25);
-
+            z-index: -99;
+            
             // design
             opacity: 1;
+            visibility: visible;
 
             // animation
-            transition: all 1s ease;
+            transition: opacity .5s ease;
         }
     }
 
@@ -70,6 +70,9 @@
         letter-spacing: rem-calc(1.5);
         text-decoration: none;
 
+        // event
+        cursor: none;
+
         @include respond-below(tablet) {
             // layout 
             display: block;
@@ -113,7 +116,6 @@
 
         // animation
         transition: all .25s ease;
-       
         transform-origin: right;
 
         @include respond-below(tablet) {
@@ -132,6 +134,7 @@
         left: rem-calc(-10);
         width: calc(100% + rem-calc(10));
         height: 100%;
+        z-index: 100;
         position: absolute;
 
         // design
@@ -146,10 +149,6 @@
 
 .body--on-dark-mode {
     .navigation {
-        @include respond-below(tablet) {
-            // design
-            background-color: $color-dark;
-        }
 
         &__link {
             // typo

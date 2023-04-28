@@ -11,6 +11,8 @@
 
     &__container {
         // layout
+        column-gap: 20px;
+        
         @include respond-below(tablet) {
             // layout
             flex-direction: column-reverse;
@@ -34,9 +36,17 @@
         left: 0;
         position: absolute;
 
+        // typo
+        white-space: break-spaces;
+
         @include respond-below(laptop) {
             // layout
             left: rem-calc(20);
+        }
+
+        @include respond-below(tablet) {
+             // typo
+            white-space: nowrap;
         }
     }
 
@@ -44,7 +54,6 @@
         @include respond-below(smallMobile) {
             // typo
             font-size: rem-calc(36);
-            
         }
     }
 
