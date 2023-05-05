@@ -48,7 +48,7 @@
         </ul>
         <ul class="aside__social-media aside__social-media--is-light">
             <li class="aside__social-media__item" v-for="item in darkModeMedia" :key="item._uid">
-                <NuxtLink :to="item.link.cached_url" :target="item.link.target">
+                <NuxtLink :to="item.link.cached_url" :target="item.link.target" class="aside__social-media__link">
                     <img :src="item.icon.filename" :alt="item.icon.alt" />
                 </NuxtLink>
             </li>
