@@ -48,7 +48,6 @@
     }
 
     const onToggleLink = (e) => {
-        console.log(isTablet.value, isMenuOpen.value)
         if (isTablet.value) {
             if (document.querySelector('.navigation__list').dataset.prevValue === e.target.textContent) {
                 isMenuOpen.value = !isMenuOpen.value

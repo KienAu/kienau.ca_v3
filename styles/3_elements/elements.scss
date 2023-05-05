@@ -1,6 +1,6 @@
 body {
     // layout
-    margin: rem-calc(25 30);
+    margin: rem-calc(25 45);
     overflow-x: hidden;
 
     // typo
@@ -15,6 +15,11 @@ body {
 
     // event 
     cursor: none;
+
+    @include respond-below(laptop) {
+        // layout
+        margin-inline: rem-calc(55);
+    }
 
     @include respond-below(smallMobile) {
         // layout

@@ -12,7 +12,8 @@
     &__wrapper {
         // layout
         height: 100%;
-        align-items: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
 
         @include respond-below(bigMobile) {
             // layout
@@ -21,15 +22,33 @@
     }
 
     &__title {
-        @include respond-below(tablet) {
+        @include respond-below(laptop) {
             // typo
             white-space: nowrap;
+        }
+
+        &--is-mobile {
+            // layout
+            display: none;
+
+            @include respond-below(laptop) {
+                // layout
+                display: block;
+            }
+        }
+
+        &--is-desktop {
+            @include respond-below(laptop) {
+                // layout
+                display: none;
+            }
         }
     }
 
     &__content,
     &__secondary-image,
-    &__image {
+    &__image,
+    &__video {
         // layout
         display: none;
 
@@ -72,6 +91,9 @@
         letter-spacing: rem-calc(1.5);
         text-decoration: none;
 
+        // animation
+        transition: all .5s ease;
+
         // event 
         cursor: none;
 
@@ -84,8 +106,24 @@
             margin-right: rem-calc(2);
             margin-bottom: rem-calc(4);
 
+            // animation
+            transition: all .5s ease;
+
             // design
             background-color: $color-light;
+        }
+
+        &:hover {
+            // typo
+            color: $color-highlight;
+
+            &::before {
+                // layout
+                width: rem-calc(90);
+
+                // design
+                background-color: $color-highlight;
+            }
         }
     }
 
@@ -93,6 +131,8 @@
         // layout
         width: 83%;
         display: flex;
+        z-index: 999;
+        position: relative;
         margin-top: rem-calc(32);
         justify-content: space-between;
 
@@ -102,47 +142,55 @@
         }
     }
 
-    &__secondary-image {
+    &__showcase {
         // layout
         width: 83%;
+        position: relative;
+        overflow: hidden;
         margin-top: rem-calc(32);
+    }
+
+    &__showcase-transition {
+        // layout
+        height: 100%;
+        position: absolute;
+
+        // design
+        background-color: $color-light;
+    }
+
+    &__secondary-image,
+    &__video {
+        // layout
+        width: 100%;
         object-fit: cover;
 
         @include respond-below(bigMobile) {
             // layout
-            width: 100%;
+            margin-bottom: rem-calc(32)
         }
     }
 
     &__image-wrap {
         // layout
-        height: 100%;
+        width: 100%;
+        height: rem-calc(600);
         position: relative;
         overflow: hidden;
 
         @include respond-below(tablet) {
             // layout
-            margin-top: rem-calc(160);
-        }
-
-        @include respond-below(bigMobile) {
-            // layout
-            margin-top: rem-calc(0);
+            height: 100%;
+            max-height: rem-calc(850);
         }
     }
 
     &__image {
         // layout
-        height: calc(100% - rem-calc(60));
-        object-fit: contain;
-        max-height: rem-calc(900);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         object-position: center;
-
-        @include respond-below(laptop) {
-            // layout
-            width: 100%;
-            height: unset;
-        }
 
         @include respond-below(tablet) {
             // layout
@@ -151,7 +199,6 @@
 
         @include respond-below(bigMobile) {
             // layout
-            width: 100%;
             position: static;
 
             // animation
@@ -172,5 +219,25 @@
         border: none;
         outline: 0;
         background-color: transparent;
+
+        // event
+        cursor: none;
+
+        // animation
+        transition: color .5s ease;
+
+        &:hover {
+            // typo
+            color: $color-highlight;
+        }
+    }
+
+    &__image-transition {
+        // layout
+        height: 100%;
+        position: absolute;
+
+        // design
+        background-color: $color-highlight;
     }
 }

@@ -1,7 +1,5 @@
 <script setup>
     const prop = defineProps({ blok: Object })
-
-    const { gsap, ScrollTrigger, ScrollToPlugin } = useGsap()
     
 </script>
 
