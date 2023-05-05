@@ -148,6 +148,11 @@
         position: relative;
         overflow: hidden;
         margin-top: rem-calc(32);
+
+        @include respond-below(bigMobile) {
+            // layout
+            width: 100%;
+        }
     }
 
     &__showcase-transition {
