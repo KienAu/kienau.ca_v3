@@ -72,9 +72,9 @@
 
     onMounted(() => {
 
-        const id = document.querySelector('#Page section')
+        const pageId = document.querySelector('#Page section')
 
-        document.querySelector('.navigation__list').dataset.prevValue = id.getAttribute('id')
+        document.querySelector('.navigation__list').dataset.prevValue = pageId.getAttribute('id')
 
         gsap.from('.header__border-top', {
             width: 0,
