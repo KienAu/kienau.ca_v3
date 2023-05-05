@@ -71,8 +71,6 @@
     }
 
     onMounted(() => {
-        document.querySelector('.navigation__list').dataset.prevValue = document.querySelector('#Page section').getAttribute('id')
-
         gsap.from('.header__border-top', {
             width: 0,
             x: 0,
