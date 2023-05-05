@@ -97,6 +97,11 @@
         // event 
         cursor: none;
 
+        @include respond-below(tablet) {
+            // event 
+            cursor: pointer;
+        }
+
         &::before {
             // layout
             width: rem-calc(100);
@@ -229,6 +234,11 @@
 
         // animation
         transition: color .5s ease;
+
+        @include respond-below(tablet) {
+            // event 
+            cursor: pointer;
+        }
 
         &:hover {
             // typo

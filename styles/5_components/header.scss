@@ -55,6 +55,11 @@
     &__link {
         // event
         cursor: none;
+
+        @include respond-below(tablet) {
+            // event 
+            cursor: pointer;
+        }
     }
 
     &__hamburger {

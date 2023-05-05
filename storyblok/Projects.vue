@@ -14,8 +14,6 @@
         }
     }
 
-    console.log(isVideo('hello'))
-
     const { gsap } = useGsap()
 
     const handleSlideChange = (val) => {

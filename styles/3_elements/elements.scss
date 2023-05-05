@@ -21,6 +21,11 @@ body {
         margin-inline: rem-calc(55);
     }
 
+    @include respond-below(tablet) {
+        // event 
+        cursor: auto;
+    }
+
     @include respond-below(smallMobile) {
         // layout
         margin: rem-calc(15);
@@ -80,6 +85,11 @@ h3 {
 
     // event
     cursor: none;
+
+    @include respond-below(tablet) {
+        // event 
+        cursor: auto;
+    }
 }
 
 /* Track */
@@ -89,6 +99,11 @@ h3 {
 
     // event
     cursor: none;
+
+    @include respond-below(tablet) {
+        // event 
+        cursor: auto;
+    }
 }
 
 /* Handle */
@@ -98,6 +113,11 @@ h3 {
 
     // event
     cursor: none;
+
+    @include respond-below(tablet) {
+        // event 
+        cursor: auto;
+    }
 }
 
 /* Handle on hover */
@@ -107,6 +127,11 @@ h3 {
 
     // event
     cursor: none;
+
+    @include respond-below(tablet) {
+        // event 
+        cursor: auto;
+    }
 }
 
 ::selection {
@@ -115,6 +140,11 @@ h3 {
 
     // event
     cursor: none;
+
+    @include respond-below(tablet) {
+        // event 
+        cursor: auto;
+    }
 }
 
 .body--on-dark-mode {
