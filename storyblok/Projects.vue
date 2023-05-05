@@ -107,7 +107,9 @@
                     <span class="projects__highlight-text">{{ item.highlight_text }}</span>
                     <h2 class="projects__subtitle">{{ item.title }}</h2>
                     <p class="project__description">{{ item.description }}</p>
-                    <NuxtLink v-if="item.link.cached_url" class="projects__link" :to="item.link.cached_url" :target="item.link.target"> <span class="projects__link-text"> View Site </span></NuxtLink>
+                    <NuxtLink v-if="item.link.cached_url" class="projects__link" :to="item.link.cached_url" :target="item.link.target"> 
+                        <span class="projects__link-text"> View Site </span>
+                    </NuxtLink>
                 </div>
                 <div class="projects__control-panel" v-if="blok.your_work.length > 1">
                     <button class="projects__controller" @click="handleSlideChange(-1)">Prev</button>
