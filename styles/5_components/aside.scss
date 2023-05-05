@@ -111,6 +111,7 @@
         &__link {
             // event
             cursor: none;
+            
             @include respond-below(tablet) {
                 // layout
                 height: rem-calc(22);
