@@ -19,5 +19,4 @@
     const props = defineProps({
         isMenuOpen: Boolean,
     });
-
 </script>
