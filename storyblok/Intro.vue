@@ -1,6 +1,5 @@
 <script setup>
     const prop = defineProps({ blok: Object })
-    
 </script>
 
 <template>
