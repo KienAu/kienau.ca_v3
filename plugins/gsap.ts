@@ -4,12 +4,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 export default defineNuxtPlugin(() => {
-    return {
-        provide: {
-            gsap,
-            Draggable,
-            ScrollTrigger,
-            ScrollToPlugin
-        },
-    };
+  return {
+    provide: {
+      gsap,
+      Draggable,
+      ScrollTrigger,
+      ScrollToPlugin,
+    },
+  };
 });

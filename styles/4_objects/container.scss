@@ -1,26 +1,26 @@
 .container {
+  // layout
+  margin: 0 auto;
+  max-width: rem-calc(1440);
+
+  &--fluid {
     // layout
-    margin: 0 auto;
-    max-width: rem-calc(1440);
+    max-width: unset;
+  }
 
-    &--fluid {
-        // layout
-        max-width: unset;
-    }
+  @include respond-below(laptop) {
+    // layout
+    max-width: rem-calc(1180);
+  }
 
-    @include respond-below(laptop) {
-        // layout
-        max-width: rem-calc(1180);
-    }
+  @include respond-below(tablet) {
+    // layout
+    margin: rem-calc(0 15);
+    max-width: unset;
+  }
 
-    @include respond-below(tablet) {
-        // layout
-        margin: rem-calc(0 15);
-        max-width: unset;
-    }
-
-    @include respond-below(bigMobile) {
-        // layout
-        margin: rem-calc(0);
-    }
+  @include respond-below(bigMobile) {
+    // layout
+    margin: rem-calc(0);
+  }
 }

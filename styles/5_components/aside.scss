@@ -1,152 +1,151 @@
 .aside {
+  // layout
+  left: rem-calc(25);
+  bottom: rem-calc(30);
+  z-index: 99;
+  position: fixed;
+
+  @include respond-below(tablet) {
     // layout
-    left: rem-calc(25);
-    bottom: rem-calc(30);
-    z-index: 99;
-    position: fixed;
-    
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  @include respond-below(smallMobile) {
+    // layout
+    left: rem-calc(15);
+    bottom: rem-calc(15);
+  }
+
+  &__line {
+    // layout
+    width: rem-calc(22);
+    height: rem-calc(1);
+    display: block;
+    margin-bottom: rem-calc(16);
+
+    // design
+    background-color: $color-dark;
+
     @include respond-below(tablet) {
+      // layout
+      width: rem-calc(1);
+      height: rem-calc(22);
+      margin-right: rem-calc(16);
+      margin-bottom: unset;
+    }
+
+    @include respond-below(bigMobile) {
+      // layout
+      display: none;
+    }
+  }
+
+  &__text-wrap {
+    // layout
+    overflow: hidden;
+    margin-left: rem-calc(2);
+
+    // animation
+    transform: rotate(270deg);
+    transform-origin: 0% 0%;
+
+    @include respond-below(tablet) {
+      // animation
+      transform: unset;
+      transform-origin: unset;
+    }
+
+    @include respond-below(bigMobile) {
+      // layout
+      display: none;
+    }
+  }
+
+  &__text {
+    // layout
+    display: block;
+
+    // typo
+    font-size: rem-calc(16);
+    font-family: $font-primary;
+    letter-spacing: rem-calc(1.5);
+    text-transform: uppercase;
+
+    // animation
+    transform: translate(-100%, 0);
+  }
+
+  &__social-media {
+    &--is-light {
+      // layout
+      display: none;
+    }
+
+    &--is-dark {
+      // layout
+      display: block;
+
+      @include respond-below(tablet) {
         // layout
         display: flex;
-        flex-direction: row-reverse;
+      }
     }
 
-    @include respond-below(smallMobile) {
+    &__item {
+      // layout
+      margin-bottom: rem-calc(15);
+
+      &:last-child {
         // layout
-        left: rem-calc(15);
-        bottom: rem-calc(15);
+        margin-bottom: 0;
+      }
+
+      @include respond-below(tablet) {
+        // layout
+        margin-right: rem-calc(20);
+        margin-bottom: 0;
+      }
     }
 
-    &__line {
+    &__link {
+      // event
+      cursor: none;
+
+      @include respond-below(tablet) {
         // layout
-        width: rem-calc(22);
-        height: rem-calc(1);
-        display: block;
-        margin-bottom: rem-calc(16);
-
-        // design
-        background-color: $color-dark;
-
-        @include respond-below(tablet) {
-            // layout
-            width: rem-calc(1);
-            height: rem-calc(22);
-            margin-right: rem-calc(16);
-            margin-bottom: unset;
-        }
-
-        @include respond-below(bigMobile) {
-            // layout
-            display: none;
-        }
-    }
-
-    &__text-wrap {
-        // layout
-        overflow: hidden;
-        margin-left: rem-calc(2);
-
-        // animation
-        transform: rotate(270deg);
-        transform-origin: 0% 0%;
-
-        @include respond-below(tablet) {
-            // animation
-            transform: unset;
-            transform-origin: unset;
-        }
-
-        @include respond-below(bigMobile) {
-            // layout
-            display: none;
-        }
-    }
-
-    &__text {
-        // layout
+        height: rem-calc(22);
         display: block;
 
-        // typo
-        font-size: rem-calc(16);
-        font-family: $font-primary;
-        letter-spacing: rem-calc(1.5);
-        text-transform: uppercase;
-
-        // animation
-        transform: translate(-100%, 0);
+        // event
+        cursor: pointer;
+      }
     }
-
-    &__social-media {
-        &--is-light {
-            // layout
-            display: none;
-        }
-
-        &--is-dark {
-            // layout
-            display: block;
-
-            @include respond-below(tablet) {
-                // layout
-                display: flex;
-            }
-        }
-
-        &__item {
-            // layout
-            margin-bottom: rem-calc(15);
-
-            &:last-child {
-                // layout
-                margin-bottom: 0;
-            }
-
-            @include respond-below(tablet) {
-                // layout
-                margin-right: rem-calc(20);
-                margin-bottom: 0;
-            }
-        }
-
-        &__link {
-            // event
-            cursor: none;
-
-            @include respond-below(tablet) {
-                // layout
-                height: rem-calc(22);
-                display: block;
-
-                // event 
-                cursor: pointer;
-                
-            }
-        }
-    }
+  }
 }
 
 .body--on-dark-mode {
-    .aside {
-        &__line {
-            // design
-            background-color: $color-light;
-        }
-
-        &__social-media {
-            &--is-light {
-                // layout
-                display: block;
-
-                @include respond-below(tablet) {
-                    // layout
-                    display: flex;
-                }
-            }
-
-            &--is-dark {
-                // layout
-                display: none;
-            }
-        }
+  .aside {
+    &__line {
+      // design
+      background-color: $color-light;
     }
+
+    &__social-media {
+      &--is-light {
+        // layout
+        display: block;
+
+        @include respond-below(tablet) {
+          // layout
+          display: flex;
+        }
+      }
+
+      &--is-dark {
+        // layout
+        display: none;
+      }
+    }
+  }
 }

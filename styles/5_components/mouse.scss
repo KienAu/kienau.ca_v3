@@ -1,65 +1,65 @@
 #mouse {
+  // layout
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  z-index: 99;
+  position: fixed;
+
+  // animation
+  translate: -50% -50%;
+
+  // design
+  border: 1px solid $color-dark;
+  border-radius: 50%;
+
+  @include respond-below(tablet) {
+    // event
+    display: none;
+  }
+
+  &::after {
     // layout
     top: 50%;
     left: 50%;
-    width: 50px;
-    height: 50px;
-    z-index:99;
-    position: fixed;
+    width: 5px;
+    height: 5px;
+    display: block;
+    content: "";
+    position: absolute;
 
     // animation
     translate: -50% -50%;
+    transform: scale(1);
+    transition: all 0.25s ease;
 
     // design
-    border: 1px solid $color-dark;
     border-radius: 50%;
+    background-color: $color-dark;
+  }
 
-    @include respond-below(tablet) {
-        // event 
-        display: none;
-    }
-
+  &.mouse--is-clicked {
     &::after {
-        // layout
-        top: 50%;
-        left: 50%;
-        width: 5px;
-        height: 5px;
-        display: block;
-        content: '';
-        position: absolute;
+      // layout
+      width: 10px;
+      height: 10px;
 
-        // animation
-        translate: -50% -50%;
-        transform: scale(1);
-        transition: all .25s ease;
-
-        // design
-        border-radius: 50%;
-        background-color: $color-dark;
+      // animation
+      transform: scale(1.2);
+      transition: all 0.25s ease;
     }
-
-    &.mouse--is-clicked {
-        &::after {
-            // layout
-            width: 10px;
-            height: 10px;
-
-            // animation
-            transform: scale(1.2);
-            transition: all .25s ease;
-        }
-    }
+  }
 }
 
 .body--on-dark-mode {
-    #mouse {
-        // design
-        border: 1px solid $color-light;
+  #mouse {
+    // design
+    border: 1px solid $color-light;
 
-        &::after {
-            // design
-            background-color: $color-light;
-        }
+    &::after {
+      // design
+      background-color: $color-light;
     }
+  }
 }

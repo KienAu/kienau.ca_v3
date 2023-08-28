@@ -1,44 +1,43 @@
 <script setup>
-    const storyblokApi = useStoryblokApi()
-    const { data } = await storyblokApi.get('cdn/stories/config', {
-        version: 'published',
-        resolve_links: 'url',
-    })
-    
-    const copyright = ref(null)
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get("cdn/stories/config", {
+  version: "published",
+  resolve_links: "url",
+});
 
-    copyright.value = data.story.content.copyright
+const copyright = ref(null);
 
-    const { gsap } = useGsap()
+copyright.value = data.story.content.copyright;
 
-    onMounted(() => {
-        gsap.from('.footer', {
-            opacity: 0,
-            delay: 2.7,
-            duration: .5
-        })
-        
-        gsap.from('.footer__transition-text', {
-            delay: 2.5,
-            duration: .5,
-            scaleX: 0,
-            transformOrigin: 'left',
-        })
+const { gsap } = useGsap();
 
-        gsap.to('.footer__transition-text', {
-            delay: 3.25,
-            duration: .5,
-            transformOrigin: 'right',
-            scaleX: 0,
-        })
-    })
+onMounted(() => {
+  gsap.from(".footer", {
+    opacity: 0,
+    delay: 2.7,
+    duration: 0.5,
+  });
 
+  gsap.from(".footer__transition-text", {
+    delay: 2.5,
+    duration: 0.5,
+    scaleX: 0,
+    transformOrigin: "left",
+  });
+
+  gsap.to(".footer__transition-text", {
+    delay: 3.25,
+    duration: 0.5,
+    transformOrigin: "right",
+    scaleX: 0,
+  });
+});
 </script>
 
 <template>
-    <footer class="footer">
-        <span class="footer__text">
-            © {{ copyright }}<span class="footer__transition-text"></span>
-        </span>
-    </footer>
+  <footer class="footer">
+    <span class="footer__text">
+      © {{ copyright }}<span class="footer__transition-text"></span>
+    </span>
+  </footer>
 </template>

@@ -1,14 +1,14 @@
 .router-link-active {
-    .navigation__highlight {
-        // layout
-        width: calc(100% + rem-calc(10)); 
+  .navigation__highlight {
+    // layout
+    width: calc(100% + rem-calc(10));
 
-        // animation
-        transition: all .25s ease;
+    // animation
+    transition: all 0.25s ease;
 
-        @include respond-below(tablet) {
-            // layout
-            width: calc(100% + rem-calc(60));
-        }
+    @include respond-below(tablet) {
+      // layout
+      width: calc(100% + rem-calc(60));
     }
+  }
 }

@@ -1,54 +1,54 @@
 .contact {
+  // layout
+  height: calc(100vh - rem-calc(60));
+
+  &__wrapper {
     // layout
-    height: calc(100vh - rem-calc(60));
+    height: 100%;
+    align-items: center;
 
-    &__wrapper {
-        // layout
-        height: 100%;
-        align-items: center;
-
-        @include respond-below(tablet) {
-            // layout
-            flex-direction: column-reverse;
-            justify-content: center;
-        }
+    @include respond-below(tablet) {
+      // layout
+      flex-direction: column-reverse;
+      justify-content: center;
     }
+  }
 
-    &__highlight-text {
-        // layout
-        display: block;
-        margin-bottom: rem-calc(20);
+  &__highlight-text {
+    // layout
+    display: block;
+    margin-bottom: rem-calc(20);
 
-        // typo
-        color: $color-highlight;
-        font-weight: 500;
-        letter-spacing: rem-calc(1.5);
-        text-transform: uppercase;
-    }
+    // typo
+    color: $color-highlight;
+    font-weight: 500;
+    letter-spacing: rem-calc(1.5);
+    text-transform: uppercase;
+  }
 
-    &__item {
-        // layout
-        margin-bottom: rem-calc(20);
-        
-        // typo
-        letter-spacing: rem-calc(1.5);
-    }
+  &__item {
+    // layout
+    margin-bottom: rem-calc(20);
 
-    &__link {
-        // layout
-        display: flex;
-    }
+    // typo
+    letter-spacing: rem-calc(1.5);
+  }
 
-    &__link-text {
-        // layout
-        margin-left: rem-calc(12);
+  &__link {
+    // layout
+    display: flex;
+  }
 
-        // typo
-        letter-spacing: rem-calc(1.5);
-    }
+  &__link-text {
+    // layout
+    margin-left: rem-calc(12);
 
-    &__text {
-        // typo
-        line-height: rem-calc(24);
-    }
+    // typo
+    letter-spacing: rem-calc(1.5);
+  }
+
+  &__text {
+    // typo
+    line-height: rem-calc(24);
+  }
 }
