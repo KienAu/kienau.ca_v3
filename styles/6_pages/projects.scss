@@ -1,6 +1,6 @@
 .projects {
     // layout
-    height: calc(100vh - rem-calc(60));
+    height: calc(100vh - rem-calc(150));
     padding: rem-calc(100 0 0);
 
     @include respond-below(bigMobile) {
