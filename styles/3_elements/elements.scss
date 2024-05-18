@@ -1,6 +1,6 @@
 body {
   // layout
-  margin: rem-calc(25 45);
+  margin: rem-calc(25 60);
   overflow-x: hidden;
 
   // typo
@@ -16,17 +16,15 @@ body {
   // event
   cursor: none;
 
-  @include respond-below(laptop) {
-    // layout
-    margin-inline: rem-calc(55);
-  }
-
-  @include respond-below(tablet) {
+  @include breakpoint(tablet) {
     // event
     cursor: auto;
+
+      // layout
+   margin: rem-calc(25 20);
   }
 
-  @include respond-below(smallMobile) {
+  @include breakpoint(smallMobile) {
     // layout
     margin: rem-calc(15);
   }
@@ -52,7 +50,7 @@ h1 {
   font-weight: 400;
   font-family: $font-display;
 
-  @include respond-below(smallMobile) {
+  @include breakpoint(smallMobile) {
     // typo
     font-size: rem-calc(64);
   }
@@ -86,7 +84,7 @@ h3 {
   // event
   cursor: none;
 
-  @include respond-below(tablet) {
+  @include breakpoint(tablet) {
     // event
     cursor: auto;
   }
@@ -100,7 +98,7 @@ h3 {
   // event
   cursor: none;
 
-  @include respond-below(tablet) {
+  @include breakpoint(tablet) {
     // event
     cursor: auto;
   }
@@ -114,7 +112,7 @@ h3 {
   // event
   cursor: none;
 
-  @include respond-below(tablet) {
+  @include breakpoint(tablet) {
     // event
     cursor: auto;
   }
@@ -128,7 +126,7 @@ h3 {
   // event
   cursor: none;
 
-  @include respond-below(tablet) {
+  @include breakpoint(tablet) {
     // event
     cursor: auto;
   }
@@ -141,7 +139,7 @@ h3 {
   // event
   cursor: none;
 
-  @include respond-below(tablet) {
+  @include breakpoint(tablet) {
     // event
     cursor: auto;
   }

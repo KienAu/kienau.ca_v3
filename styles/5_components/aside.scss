@@ -5,13 +5,13 @@
   z-index: 99;
   position: fixed;
 
-  @include respond-below(tablet) {
+  @include breakpoint(tablet) {
     // layout
     display: flex;
     flex-direction: row-reverse;
   }
 
-  @include respond-below(smallMobile) {
+  @include breakpoint(smallMobile) {
     // layout
     left: rem-calc(15);
     bottom: rem-calc(15);
@@ -27,7 +27,7 @@
     // design
     background-color: $color-dark;
 
-    @include respond-below(tablet) {
+    @include breakpoint(tablet) {
       // layout
       width: rem-calc(1);
       height: rem-calc(22);
@@ -35,7 +35,7 @@
       margin-bottom: unset;
     }
 
-    @include respond-below(bigMobile) {
+    @include breakpoint(bigMobile) {
       // layout
       display: none;
     }
@@ -50,13 +50,13 @@
     transform: rotate(270deg);
     transform-origin: 0% 0%;
 
-    @include respond-below(tablet) {
+    @include breakpoint(tablet) {
       // animation
       transform: unset;
       transform-origin: unset;
     }
 
-    @include respond-below(bigMobile) {
+    @include breakpoint(bigMobile) {
       // layout
       display: none;
     }
@@ -86,7 +86,7 @@
       // layout
       display: block;
 
-      @include respond-below(tablet) {
+      @include breakpoint(tablet) {
         // layout
         display: flex;
       }
@@ -101,7 +101,7 @@
         margin-bottom: 0;
       }
 
-      @include respond-below(tablet) {
+      @include breakpoint(tablet) {
         // layout
         margin-right: rem-calc(20);
         margin-bottom: 0;
@@ -112,7 +112,7 @@
       // event
       cursor: none;
 
-      @include respond-below(tablet) {
+      @include breakpoint(tablet) {
         // layout
         height: rem-calc(22);
         display: block;
@@ -136,7 +136,7 @@
         // layout
         display: block;
 
-        @include respond-below(tablet) {
+        @include breakpoint(tablet) {
           // layout
           display: flex;
         }

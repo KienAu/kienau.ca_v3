@@ -17,7 +17,7 @@ export default defineNuxtConfig({
       title: "Oliver Au | Portfolio",
       meta: [
         // <meta name="description" content="My amazing site">
-        { name: "description", content: "" },
+        { name: "description", content: "Oliver Au, Web developper and designer freelancer" },
       ],
     },
   },

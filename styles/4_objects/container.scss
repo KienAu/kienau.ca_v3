@@ -8,18 +8,18 @@
     max-width: unset;
   }
 
-  @include respond-below(laptop) {
+  @include breakpoint(laptop) {
     // layout
     max-width: rem-calc(1180);
   }
 
-  @include respond-below(tablet) {
+  @include breakpoint(tablet) {
     // layout
     margin: rem-calc(0 15);
     max-width: unset;
   }
 
-  @include respond-below(bigMobile) {
+  @include breakpoint(bigMobile) {
     // layout
     margin: rem-calc(0);
   }

@@ -1,13 +1,13 @@
 .contact {
   // layout
-  height: calc(100vh - rem-calc(60));
+  height: calc(100svh - rem-calc(60));
 
   &__wrapper {
     // layout
     height: 100%;
     align-items: center;
 
-    @include respond-below(tablet) {
+    @include breakpoint(tablet) {
       // layout
       flex-direction: column-reverse;
       justify-content: center;

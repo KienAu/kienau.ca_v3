@@ -13,7 +13,7 @@ for (let i = 0; i < sections[3].list.length; i++) {
 <template>
   <section class="about" id="About">
     <div class="container row about__container">
-      <div class="column--is-w6 column--is-md-w10 column--is-sm-w12">
+      <div class="about__col-right column--is-w6 column--is-md-w10 column--is-sm-w12">
         <section class="about__sections" v-for="section in blok.sections">
           <div
             class="about__section about__section--is-info"
@@ -55,7 +55,7 @@ for (let i = 0; i < sections[3].list.length; i++) {
           </div>
         </section>
       </div>
-      <div class="column--is-w6 row row--is-not column--is-md-w12">
+      <div class="about__col-left column--is-w6 row row--is-not column--is-md-w12">
         <div class="about__wrapper">
           <h1 class="about__title">
             {{ blok.title }}

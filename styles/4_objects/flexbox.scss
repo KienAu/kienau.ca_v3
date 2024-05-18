@@ -72,7 +72,7 @@
     width: 8.33333%;
   }
 
-  @include respond-below(tablet) {
+  @include breakpoint(tablet) {
     &--is-md-w12 {
       // layout
       width: 100%;
@@ -139,7 +139,7 @@
     }
   }
 
-  @include respond-below(bigMobile) {
+  @include breakpoint(bigMobile) {
     &--is-sm-w12 {
       // layout
       width: 100%;

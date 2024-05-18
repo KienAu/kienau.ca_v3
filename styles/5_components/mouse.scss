@@ -8,13 +8,13 @@
   position: fixed;
 
   // animation
-  translate: -50% -50%;
+  transform: translate(-50%, -50%);
 
   // design
   border: 1px solid $color-dark;
   border-radius: 50%;
 
-  @include respond-below(tablet) {
+  @include breakpoint(tablet) {
     // event
     display: none;
   }

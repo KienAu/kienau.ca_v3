@@ -1,9 +1,9 @@
 .navigation {
-  @include respond-below(tablet) {
+  @include breakpoint(tablet) {
     // layout
     left: rem-calc(-30);
     width: calc(100% + rem-calc(60));
-    height: 100vh;
+    height: 100svh;
     position: absolute;
 
     // design
@@ -26,34 +26,37 @@
     }
   }
 
-  @include respond-below(smallMobile) {
+  @include breakpoint(smallMobile) {
     // layout
-    height: calc(100vh + rem-calc(10));
+    height: calc(100svh + rem-calc(10));
   }
 
   &__list {
-    @include respond-below(tablet) {
+    // layout
+    display: flex;
+    flex-direction: column;
+    row-gap: rem-calc(32);
+
+    @include breakpoint(tablet) {
       // layout
       height: 100%;
-      display: flex;
       align-items: center;
       flex-direction: column;
       justify-content: center;
+      row-gap: rem-calc(76);
     }
   }
 
   &__item {
     // layout
     overflow: hidden;
-    margin-bottom: rem-calc(30);
 
     // typo
     text-align: right;
 
-    @include respond-below(tablet) {
+    @include breakpoint(tablet) {
       // layout
       padding: rem-calc(0 30);
-      margin-bottom: rem-calc(75);
     }
   }
 
@@ -73,7 +76,7 @@
     // event
     cursor: none;
 
-    @include respond-below(tablet) {
+    @include breakpoint(tablet) {
       // layout
       display: block;
       padding: rem-calc(0 30);
@@ -85,7 +88,7 @@
       transform: translateX(0);
 
       // event
-      cursor: auto;
+      cursor: pointer;
     }
 
     &:hover {
@@ -96,7 +99,7 @@
         // animation
         transition: all 0.25s ease;
 
-        @include respond-below(tablet) {
+        @include breakpoint(tablet) {
           // layout
           width: calc(100% + rem-calc(60));
         }
@@ -121,7 +124,7 @@
     transition: all 0.25s ease;
     transform-origin: right;
 
-    @include respond-below(tablet) {
+    @include breakpoint(tablet) {
       // layout
       top: rem-calc(23);
       right: 50%;

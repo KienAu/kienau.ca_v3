@@ -100,9 +100,9 @@ const transitionSlider = () => {
   <section class="projects" id="Projects">
     <div class="container row projects__wrapper">
       <h1 class="projects__title projects__title--is-mobile">
-        {{ blok.Title }}
+        Projects
       </h1>
-      <div class="column--is-w6 column--is-sm-w12">
+      <div class="projects__col">
         <h1 class="projects__title projects__title--is-desktop">
           {{ blok.Title }}
         </h1>
@@ -167,7 +167,7 @@ const transitionSlider = () => {
           </div>
         </div>
       </div>
-      <div class="column--is-w6 column--is-sm-w12">
+      <div class="projects__col">
         <div class="projects__image-wrap">
           <div class="projects__image-transition"></div>
           <img

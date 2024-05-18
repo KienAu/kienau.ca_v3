@@ -1,12 +1,11 @@
 .projects {
   // layout
-  height: calc(100vh - rem-calc(150));
-  padding: rem-calc(100 0 0);
+  height: calc(100svh - rem-calc(300));
+  margin: rem-calc(150 0);
 
-  @include respond-below(bigMobile) {
+  @include breakpoint(bigMobile) {
     // layout
     height: unset;
-    padding: rem-calc(100 0);
   }
 
   &__wrapper {
@@ -14,15 +13,17 @@
     height: 100%;
     align-items: flex-start;
     flex-wrap: wrap;
+    column-gap: rem-calc(32);
+    row-gap: rem-calc(32);
 
-    @include respond-below(bigMobile) {
+    @include breakpoint(bigMobile) {
       // layout
       flex-direction: column;
     }
   }
 
   &__title {
-    @include respond-below(laptop) {
+    @include breakpoint(laptop) {
       // typo
       white-space: nowrap;
     }
@@ -31,16 +32,37 @@
       // layout
       display: none;
 
-      @include respond-below(laptop) {
+      @include breakpoint(laptop) {
         // layout
+        width: 100%;
         display: block;
+        align-self: flex-end;
       }
     }
 
     &--is-desktop {
-      @include respond-below(laptop) {
+      @include breakpoint(laptop) {
         // layout
         display: none;
+      }
+    }
+  }
+
+  &__col {
+    // layout
+    width: 50%;
+
+    @include breakpoint(bigMobile) {
+      // layout
+      width: 100%;
+    }
+    
+    &:first-of-type {
+      width: calc(50% - rem-calc(32));
+
+      @include breakpoint(bigMobile) {
+        // layout
+        width: 100%;
       }
     }
   }
@@ -97,7 +119,7 @@
     // event
     cursor: none;
 
-    @include respond-below(tablet) {
+    @include breakpoint(tablet) {
       // event
       cursor: pointer;
     }
@@ -141,7 +163,7 @@
     margin-top: rem-calc(32);
     justify-content: space-between;
 
-    @include respond-below(bigMobile) {
+    @include breakpoint(bigMobile) {
       // layout
       width: 100%;
     }
@@ -149,14 +171,14 @@
 
   &__showcase {
     // layout
-    width: 83%;
+    width: 100%;
     position: relative;
     overflow: hidden;
     margin-top: rem-calc(32);
 
-    @include respond-below(bigMobile) {
+    @include breakpoint(bigMobile) {
       // layout
-      width: 100%;
+      max-width: unset;
     }
   }
 
@@ -174,11 +196,6 @@
     // layout
     width: 100%;
     object-fit: cover;
-
-    @include respond-below(bigMobile) {
-      // layout
-      margin-bottom: rem-calc(32);
-    }
   }
 
   &__image-wrap {
@@ -187,7 +204,7 @@
     position: relative;
     overflow: hidden;
 
-    @include respond-below(tablet) {
+    @include breakpoint(tablet) {
       // layout
       height: 100%;
       max-height: rem-calc(850);
@@ -201,12 +218,12 @@
     object-fit: cover;
     object-position: center;
 
-    @include respond-below(tablet) {
+    @include breakpoint(tablet) {
       // layout
       max-height: rem-calc(850);
     }
 
-    @include respond-below(bigMobile) {
+    @include breakpoint(bigMobile) {
       // layout
       position: static;
 
@@ -235,7 +252,7 @@
     // animation
     transition: color 0.5s ease;
 
-    @include respond-below(tablet) {
+    @include breakpoint(tablet) {
       // event
       cursor: pointer;
     }

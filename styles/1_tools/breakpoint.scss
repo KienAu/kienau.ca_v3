@@ -1,0 +1,28 @@
+@mixin breakpoint($breakpoint) {
+    // If the breakpoint exists in the map.
+    @if map-has-key($breakpoints, $breakpoint) {
+      // Get the breakpoint value.
+      $breakpoint-value: map-get($breakpoints, $breakpoint);
+      // Write the media query.
+      @media (max-width: $breakpoint-value) {
+        @content;
+      }
+      // If the breakpoint doesn't exist in the map.
+    } @else {
+      // Log a warning.
+      @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+  }
+  
+
+@mixin breakpoint-style($rule, $fs-map) {
+    @each $fs-breakpoint, $fs-font-style in $fs-map {
+        @if $fs-breakpoint == null {
+            #{$rule}: $fs-font-style;
+        } @else {
+            @media screen and (min-width: $fs-breakpoint) {
+                #{$rule}: $fs-font-style;
+            }
+        }
+    }
+}

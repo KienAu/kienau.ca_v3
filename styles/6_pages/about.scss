@@ -1,60 +1,96 @@
 .about {
   // layout
   position: relative;
-  padding-top: rem-calc(140);
 
-  @include respond-below(tablet) {
+  @include breakpoint(tablet) {
     // layout
-    padding-top: rem-calc(96);
-    padding-bottom: rem-calc(96);
+    padding: rem-calc(96 0);
   }
 
   &__container {
     // layout
+    position: relative;
     column-gap: 20px;
 
-    @include respond-below(tablet) {
+    @include breakpoint(tablet) {
       // layout
       flex-direction: column-reverse;
     }
   }
 
-  &__wrapper {
+  &__col-right {
     // layout
-    top: rem-calc(50);
+    padding: 15% 0;
+
+    @include breakpoint(tablet) {
+      // layout
+      padding: 0;
+    }
+  }
+
+  &__col-left {
+    // layout
+    top: 0;
+    right: 0;
+    height: calc(100svh - rem-calc(50));
     position: sticky;
 
-    @include respond-below(tablet) {
+    @include breakpoint(tablet) {
       // layout
-      margin-bottom: rem-calc(75);
+      position: static;
+      height: auto;
+      margin-bottom: rem-calc(60);
+    }
+  }
+
+  &__wrapper {
+    // layout
+    right: 0;
+    top: 50%;
+    position: absolute;
+
+    // animation
+    transform: translateY(-50%);
+
+    @include breakpoint(tablet) {
+      // layout
+      position: static;
+
+      // animation
+      transform: translateY(0);
     }
   }
 
   &__title {
     // layout
-    top: rem-calc(50);
+    top: 50%;
     left: 0;
     position: absolute;
 
     // typo
-    white-space: break-spaces;
+    white-space: nowrap;
 
-    @include respond-below(laptop) {
-      // layout
-      left: rem-calc(20);
-    }
+    // animatíon
+    transform: translate(-25%,-50%);
 
-    @include respond-below(tablet) {
-      // typo
-      white-space: nowrap;
+    @include breakpoint(tablet) {
+      // animatíon
+      transform: translate(0%,-50%);
     }
   }
 
   &__subtitle {
-    @include respond-below(smallMobile) {
+    @include breakpoint(smallMobile) {
       // typo
       font-size: rem-calc(36);
     }
+  }
+
+  &__image-container {
+    // layout
+    top: 50%;
+    right: 0;
+    position: absolute;
   }
 
   &__image-wrap {
@@ -69,20 +105,19 @@
     max-width: rem-calc(530);
     object-fit: none;
 
-    @include respond-below(laptop) {
+    @include breakpoint(laptop) {
       // layout
       max-width: rem-calc(380);
     }
 
-    @include respond-below(tablet) {
+    @include breakpoint(tablet) {
       // layout
       max-height: rem-calc(225);
     }
 
-    @include respond-below(smallMobile) {
+    @include breakpoint(smallMobile) {
       // layout
-      max-width: rem-calc(200);
-      max-height: rem-calc(150);
+      max-width: rem-calc(320);
       object-fit: cover;
       object-position: 30%;
     }
@@ -133,7 +168,7 @@
       width: 50%;
       display: inline-block;
 
-      @include respond-below(smallMobile) {
+      @include breakpoint(smallMobile) {
         // layout
         width: 100%;
       }
