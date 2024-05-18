@@ -86,6 +86,12 @@ onMounted(() => {
     duration: 1.5,
   });
 
+  gsap.from(".header__hamburger", {
+    opacity: 0,
+    delay: 1.5,
+    duration: 0.5,
+  });
+
   gsap.from(".header__logo", {
     opacity: 0,
     delay: 1.5,
